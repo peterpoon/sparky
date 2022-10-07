@@ -2,13 +2,13 @@ import signal
 import sys
 import concurrent.futures
 
-from head import Head
+from sparky.modules.head import Head
 
 def handler(signum, handler):
     print('Signal handler called with signal', signum)
     sys.exit()
 
-def main():
+def run():
     print("Hello, I am Sparky")
 
     signal.signal(signal.SIGINT, handler)
@@ -17,4 +17,4 @@ def main():
         process_head = executor.submit(Head)
 
 if __name__ == "__main__":
-    main()
+    run()

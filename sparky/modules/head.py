@@ -3,6 +3,8 @@ import time
 from xml.etree.ElementTree import PI
 import pygame
 
+# Colors definition
+BACKGROUND_DARK_BLUE = (0, 8, 24)
 LIGHT_BLUE = (222, 235, 247)
 BLUE = (91, 155, 213)
 
@@ -10,8 +12,6 @@ class Head(object):
 
     os.environ["DISPLAY"] = ":0"
     pygame.init()
-
-    
 
     def __init__(self):
         print("Head process started")
@@ -23,12 +23,12 @@ class Head(object):
         pygame.mouse.set_visible(False)
 
         #RGB Background
-        self.screen.fill((0, 8, 24))
+        self.screen.fill(BACKGROUND_DARK_BLUE)
 
         # Start head loop
-        self.main()
+        self.run()
 
-    def main(self):
+    def run(self):
         running = True
         while running:   
             for event in pygame.event.get():
